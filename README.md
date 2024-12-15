@@ -25,11 +25,15 @@ I'm Marco, a Junior Full Stack Developer passionate about building web applicati
 </p>
 
 <br>
+
 <a href="https://www.linkedin.com/in/marcocenteno/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
 
 <br>
 
 ![Top Langs](https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Mack8&layout=compact&theme=radical)
+
+<br>
+
 [![Readme Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Mack8&repo=GestaPet)](https://github.com/Mack8/GestaPet)
 
 
