@@ -34,9 +34,7 @@ I'm Marco, a Junior Full Stack Developer passionate about building web applicati
 
 <br>
 
-[![Readme Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Mack8&repo=GestaPet)](https://github.com/Mack8/GestaPet)
-
-[![Readme Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Mack8&repo=NFTrove)](https://github.com/Mack8/NFTrove)
+[![Readme Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Mack8&repo=GestaPet)](https://github.com/Mack8/GestaPet) [![Readme Card](https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Mack8&repo=NFTrove)](https://github.com/Mack8/NFTrove)
 
 
 <!--
