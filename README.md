@@ -42,7 +42,7 @@ I am a passionate Full Stack Developer focused on building robust, scalable web 
 <table width="100%">
   <tr>
     <td width="33%" align="center"><img src="profile-summary-card-output/radical/1-repos-per-language.svg" alt="Top languages by repository" width="100%" /></td>
-    <td width="33%" align="center"><img src="profile-summary-card-output/radical/2-most-commit-language.svg" alt="Top languages by commit" width="100%" /></td>
+    <td width="33%" align="center"><img src="profile-summary-card-output/radical/5-recently-active.svg" alt="Recently active repositories" width="100%" /></td>
     <td width="33%" align="center"><img src="profile-summary-card-output/radical/3-stats.svg" alt="GitHub stats" width="100%" /></td>
   </tr>
   <tr>

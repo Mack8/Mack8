@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Draw a "Recently Active" card from the owner's public repositories.
 
-Lists the repositories pushed most recently, with their main language and how
-long ago they were touched. Only public repositories are read (the GitHub
+Lists the repositories pushed most recently, with their main language and
+the date of the last push. Only public repositories are read (the GitHub
 users endpoint never returns private ones). The profile repository itself is
 skipped because the workflows in this repo push to it every day.
 
