@@ -34,6 +34,23 @@ I am a passionate Full Stack Developer focused on building robust, scalable web 
 
 ---
 
+### 📊 GitHub Activity
+
+<div align="center">
+  <img src="profile-summary-card-output/radical/1-repos-per-language.svg" alt="Top languages by repository" width="32%" />
+  <img src="profile-summary-card-output/radical/2-most-commit-language.svg" alt="Top languages by commit" width="32%" />
+  <img src="profile-summary-card-output/radical/3-stats.svg" alt="GitHub stats" width="32%" />
+</div>
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Mack8/Mack8/output/github-snake-dark.svg" />
+    <img alt="Contribution snake" src="https://raw.githubusercontent.com/Mack8/Mack8/output/github-snake.svg" />
+  </picture>
+</div>
+
+---
+
 ### 🛠️ Featured Projects
 
 I like to learn by building complete things, in different stacks. Here is a sample:
