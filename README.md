@@ -34,16 +34,6 @@ I am a passionate Full Stack Developer focused on building robust, scalable web 
 
 ---
 
-### 📊 Performance & Analytics
-
-<div align="center">
-  <!-- Stats and Top Languages Side by Side -->
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Mack8&layout=compact&theme=radical" height="180em" />
-  
-</div>
-
----
-
 ### 🛠️ Featured Projects
 
 I like to learn by building complete things, in different stacks. Here is a sample:
