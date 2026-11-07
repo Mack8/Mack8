@@ -6,6 +6,8 @@
   <a href="https://www.linkedin.com/in/marcocenteno/" target="_blank">
     <img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
+  <br/><br/>
+  <img alt="Open to remote roles" src="https://img.shields.io/badge/Open%20to-remote%20roles-2ea44f?style=for-the-badge"/>
 </div>
 
 ---
@@ -43,10 +45,7 @@ I am a passionate Full Stack Developer focused on building robust, scalable web 
 </div>
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Mack8/Mack8/output/github-snake-dark.svg" />
-    <img alt="Contribution snake" src="https://raw.githubusercontent.com/Mack8/Mack8/output/github-snake.svg" />
-  </picture>
+  <img alt="3D contribution chart" src="https://raw.githubusercontent.com/Mack8/Mack8/output/profile-night-view.svg" width="100%" />
 </div>
 
 ---
@@ -55,13 +54,13 @@ I am a passionate Full Stack Developer focused on building robust, scalable web 
 
 I like to learn by building complete things, in different stacks. Here is a sample:
 
-| Project | What it is | Stack |
-| :--- | :--- | :--- |
-| 🧩 **[TaskFlow](https://github.com/Mack8/taskflow-mvp)** | A minimal Jira-style platform with CQRS, event-driven microservices, REST + GraphQL, SQL + NoSQL and Azure infrastructure as code. | .NET 8 · React · GraphQL · Cosmos DB (Mongo API) · Service Bus · Bicep |
-| 💰 **[Finanzas App](https://github.com/Mack8/finanzas-app)** | Personal finance tracker with per-user row-level security, recurring payments and a local worker that parses bank purchase alerts. 400+ automated tests. | Next.js 16 · React 19 · TypeScript · Supabase · Vitest |
-| 🎫 **[SupportFlow](https://github.com/Mack8/supportflow)** | Role-based support ticketing system built as a monorepo. | NestJS · Next.js · Prisma · PostgreSQL · Docker |
-| 🎙️ **[Transcriptor](https://github.com/Mack8/transcriptor-audio)** | 100% local speech-to-text with GPU acceleration, web UI, CLI and optional summaries from a local LLM. | Python · faster-whisper · CUDA · Gradio · Ollama |
-| 📚 **[Document RAG Lab](https://github.com/Mack8/documentos-rag-lab)** | Local retrieval-augmented generation lab that answers with source citations, with OCR for scanned PDFs. | Python · Ollama · embeddings · Tesseract |
-| 📄 **[md2pdf](https://github.com/Mack8/md2pdf)** | Single-file Markdown to PDF converter that uses a headless browser. No cloud, no AI. | Python · CLI |
-| 🐾 **[GestaPet](https://github.com/Mack8/GestaPet)** | Appointment and operations management for veterinary clinics (academic team project). | Angular · Node.js · Express · Prisma · MySQL |
-| 🪙 **[NFTrove](https://github.com/Mack8/NFTrove)** | NFT management and sales system (university project). | C# · SQL Server |
+| Project | What it is | Stack | Status |
+| :--- | :--- | :--- | :--- |
+| 🧩 **[TaskFlow](https://github.com/Mack8/taskflow-mvp)** | A minimal Jira-style platform with CQRS, event-driven microservices, REST + GraphQL, SQL + NoSQL and Azure infrastructure as code. | .NET 8 · React · GraphQL · Cosmos DB (Mongo API) · Service Bus · Bicep | ![last commit](https://img.shields.io/github/last-commit/Mack8/taskflow-mvp?style=flat-square) |
+| 💰 **[Finanzas App](https://github.com/Mack8/finanzas-app)** | Personal finance tracker with per-user row-level security, recurring payments and a local worker that parses bank purchase alerts. 400+ automated tests. | Next.js 16 · React 19 · TypeScript · Supabase · Vitest | ![last commit](https://img.shields.io/github/last-commit/Mack8/finanzas-app?style=flat-square) ![license](https://img.shields.io/github/license/Mack8/finanzas-app?style=flat-square) |
+| 🎫 **[SupportFlow](https://github.com/Mack8/supportflow)** | Role-based support ticketing system built as a monorepo. | NestJS · Next.js · Prisma · PostgreSQL · Docker | — |
+| 🎙️ **[Transcriptor](https://github.com/Mack8/transcriptor-audio)** | 100% local speech-to-text with GPU acceleration, web UI, CLI and optional summaries from a local LLM. | Python · faster-whisper · CUDA · Gradio · Ollama | ![last commit](https://img.shields.io/github/last-commit/Mack8/transcriptor-audio?style=flat-square) ![license](https://img.shields.io/github/license/Mack8/transcriptor-audio?style=flat-square) |
+| 📚 **[Document RAG Lab](https://github.com/Mack8/documentos-rag-lab)** | Local retrieval-augmented generation lab that answers with source citations, with OCR for scanned PDFs. | Python · Ollama · embeddings · Tesseract | ![last commit](https://img.shields.io/github/last-commit/Mack8/documentos-rag-lab?style=flat-square) ![license](https://img.shields.io/github/license/Mack8/documentos-rag-lab?style=flat-square) |
+| 📄 **[md2pdf](https://github.com/Mack8/md2pdf)** | Single-file Markdown to PDF converter that uses a headless browser. No cloud, no AI. | Python · CLI | ![last commit](https://img.shields.io/github/last-commit/Mack8/md2pdf?style=flat-square) ![license](https://img.shields.io/github/license/Mack8/md2pdf?style=flat-square) |
+| 🐾 **[GestaPet](https://github.com/Mack8/GestaPet)** | Appointment and operations management for veterinary clinics (academic team project). | Angular · Node.js · Express · Prisma · MySQL | ![license](https://img.shields.io/github/license/Mack8/GestaPet?style=flat-square) |
+| 🪙 **[NFTrove](https://github.com/Mack8/NFTrove)** | NFT management and sales system (university project). | C# · SQL Server | ![license](https://img.shields.io/github/license/Mack8/NFTrove?style=flat-square) |
