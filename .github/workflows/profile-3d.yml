@@ -1,4 +1,4 @@
-name: Generate contribution snake
+name: Generate 3D contribution chart
 
 on:
   schedule:
@@ -9,28 +9,31 @@ permissions:
   contents: write
 
 jobs:
-  snake:
+  chart:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Generate the snake animation
-        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
+      - name: Check out the repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Generate the 3D chart
+        uses: yoshi389111/github-profile-3d-contrib@7d95e7d4cdc028dd1e1cbd957d65f35efb12ae39 # v0.9.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
 
       - name: Publish to the output branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
-          cd dist
+          mkdir -p /tmp/publish
+          cp profile-3d-contrib/*.svg /tmp/publish/
+          cd /tmp/publish
           git init -q
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -q -b output
           git add .
-          git commit -q -m "chore: update contribution snake"
+          git commit -q -m "chore: update 3D contribution chart"
           git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git" output
