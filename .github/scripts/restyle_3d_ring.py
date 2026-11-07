@@ -3,8 +3,9 @@
 
 The 3D generator draws a ring of commits per language but gives it neither a
 title nor percentages, and colors it with GitHub's language colors. This script
-recolors it with the shared palette, writes the share on each slice, adds a
-title and appends the share to the legend entries of thin slices.
+recolors it with the shared palette, adds a title, writes the share of every
+language in the legend (right-aligned column) and puts the top language in the
+center, the same rule used by the language cards.
 
 It fails loudly if the SVG is not what it expects.
 
@@ -16,21 +17,16 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from palette import color_for, label_color  # noqa: E402
+from palette import color_for, whole_percents  # noqa: E402
 
 MARKER = "<!-- ring restyled -->"
-MIN_LABEL_SHARE = 0.06
 RING_GROUP = '<g transform="translate(40, 520)">'
 
 SLICE = re.compile(
     r'<path d="([^"]+)" style="fill: (#[0-9a-fA-F]{6});" class="stroke-bg" stroke-width="2px"><title>([^<]*?) (\d+)</title></path>'
 )
 SWATCH = re.compile(r'<rect x="0" y="([\d.]+)" width="([\d.]+)" height="[\d.]+" fill="(#[0-9a-fA-F]{6})" class="stroke-bg"')
-LEGEND_TEXT = re.compile(r'(<text dominant-baseline="middle" x="26" y="[\d.]+" class="fill-fg" font-size="[\d.]+px">)([^<]+)(</text>)')
-
-
-def pct(share: float) -> str:
-    return "<1%" if share * 100 < 1 else f"{share * 100:.0f}%"
+LEGEND_TEXT = re.compile(r'(<text dominant-baseline="middle" x="26" y="([\d.]+)" class="fill-fg" font-size="([\d.]+)px">)([^<]+)(</text>)')
 
 
 def point(radius: float, angle: float) -> tuple[float, float]:
@@ -50,7 +46,7 @@ def restyle(svg: str) -> str:
     counts = [int(s[3]) for s in slices]
     total = sum(counts)
     legend = LEGEND_TEXT.findall(ring)
-    if [t[1] for t in legend] != names or len(SWATCH.findall(ring)) != len(names):
+    if [t[3] for t in legend] != names or len(SWATCH.findall(ring)) != len(names):
         raise ValueError("legend does not match the ring slices")
 
     outer = float(re.match(r"M[-\d.]+,([-\d.]+)A([\d.]+),", slices[0][0]).group(2))
@@ -72,31 +68,25 @@ def restyle(svg: str) -> str:
         ring = re.sub(rf'(<rect x="0" y="[\d.]+" width="[\d.]+" height="[\d.]+" fill=")({orig})(")', rf"\g<1>{new}\g<3>", ring, flags=re.I)
         ring = re.sub(rf'(<path d="[^"]+" style="fill: )({orig})(;")', rf"\g<1>{new}\g<3>", ring, flags=re.I)
 
-    # percentage on each slice, drawn right after the last slice path
-    labels, angle = [], 0.0
-    for name, count in zip(names, counts):
-        nxt = angle + count / total * math.tau
-        if count / total >= MIN_LABEL_SHARE:
-            x, y = point((outer + inner) / 2, (angle + nxt) / 2)
-            labels.append(
-                f'<text x="{x:.1f}" y="{y:.1f}" font-size="24" font-weight="700" fill="{label_color(colors[name])}" '
-                f'text-anchor="middle" dominant-baseline="central">{pct(count / total)}</text>'
-            )
-        angle = nxt
+    percents = whole_percents([c / total for c in counts])
+    by_name = dict(zip(names, percents))
+    top = max(range(len(names)), key=lambda i: counts[i])
     last = list(SLICE.finditer(ring))[-1]
-    title = (
-        f'<text x="0" y="{-outer - 20:.0f}" font-size="24" font-weight="600" text-anchor="middle" '
-        f'class="fill-fg">Languages by commits</text>'
+    extras = (
+        f'<text x="0" y="-4" font-size="34" font-weight="700" text-anchor="middle" class="fill-fg">{percents[top]}</text>'
+        f'<text x="0" y="24" font-size="17" text-anchor="middle" class="fill-weak">{names[top]}</text>'
+        f'<text x="0" y="{-outer - 20:.0f}" font-size="24" font-weight="600" text-anchor="middle" class="fill-fg">Languages by commits</text>'
     )
-    ring = ring[: last.end()] + "".join(labels) + title + ring[last.end() :]
+    ring = ring[: last.end()] + extras + ring[last.end() :]
 
-    # thin slices get their share in the legend
+    # the share of every language goes in a right-aligned column next to the legend
     def legend_repl(match: re.Match) -> str:
-        name = match.group(2)
-        share = counts[names.index(name)] / total
-        if share >= MIN_LABEL_SHARE:
-            return match.group(0)
-        return f'{match.group(1)}{name}<tspan dx="8" fill="#8b949e">{pct(share)}</tspan>{match.group(3)}'
+        name = match.group(4)
+        value = (
+            f'<text dominant-baseline="middle" x="215" y="{match.group(2)}" text-anchor="end" '
+            f'class="fill-fg" font-size="{match.group(3)}px" font-weight="600">{by_name[name]}</text>'
+        )
+        return match.group(0) + value
 
     ring = LEGEND_TEXT.sub(legend_repl, ring)
     return head + ring.replace(RING_GROUP, RING_GROUP + MARKER, 1)

@@ -48,7 +48,6 @@ I am a passionate Full Stack Developer focused on building robust, scalable web 
   <tr>
     <td colspan="3" align="center">
       <img src="https://raw.githubusercontent.com/Mack8/Mack8/output/profile-heat.svg" alt="3D contribution chart for the last year" width="100%" />
-      <br/><sub>Bars: contributions per day over the last year (taller and warmer means more). Ring: languages by commits.</sub>
     </td>
   </tr>
 </table>

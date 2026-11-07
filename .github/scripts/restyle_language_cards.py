@@ -4,7 +4,7 @@
 The summary-cards action draws one arc per language but prints no share. The
 angle of each arc is the share, so this script reads names, colors and shares
 from the generated SVG and writes a new card: a thicker ring with the percentage
-on each slice, the top language in the center and a tidy legend.
+in the legend, the top language in the center and a tidy legend.
 
 It fails loudly if the generated SVG is not what it expects, so a changed
 layout never publishes wrong numbers.
@@ -17,12 +17,11 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from palette import color_for, label_color, lighten  # noqa: E402
+from palette import color_for, lighten, whole_percents  # noqa: E402
 
 CARDS = ("1-repos-per-language.svg",)
 MARKER = "<!-- restyled -->"
 CX, CY, R_OUT, R_IN = 252, 118, 64, 40
-MIN_LABEL_SHARE = 0.07
 
 
 def arc_share(d: str) -> float:
@@ -96,12 +95,9 @@ def slice_path(a0: float, a1: float) -> str:
     )
 
 
-def pct(share: float) -> str:
-    return "<1%" if share * 100 < 1 else f"{share * 100:.0f}%"
-
-
 def render(card: dict) -> str:
     slices, bg = card["slices"], card["bg"]
+    percents = whole_percents([s["share"] for s in slices])
     border = lighten(bg, 0.12)
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="340" height="200" viewBox="0 0 340 200" role="img" aria-label="{card["title"]}">',
@@ -114,14 +110,13 @@ def render(card: dict) -> str:
 
     gap = min(26.0, 120.0 / len(slices))
     y0 = CY - (len(slices) - 1) * gap / 2
-    for i, s in enumerate(slices):
+    for i, (s, value) in enumerate(zip(slices, percents)):
         y = y0 + i * gap
         parts.append(f'<circle cx="31" cy="{y:.1f}" r="5.5" fill="{s["color"]}"/>')
-        label = s["name"]
-        extra = ""
-        if s["share"] < MIN_LABEL_SHARE and len(slices) > 1:
-            extra = f'<tspan dx="6" font-size="12" fill="{card["accent"]}">{pct(s["share"])}</tspan>'
-        parts.append(f'<text x="44" y="{y + 5:.1f}" font-size="14" fill="{card["text"]}">{label}{extra}</text>')
+        parts.append(f'<text x="44" y="{y + 5:.1f}" font-size="14" fill="{card["text"]}">{s["name"]}</text>')
+        parts.append(
+            f'<text x="170" y="{y + 5:.1f}" font-size="13" font-weight="600" fill="{card["accent"]}" text-anchor="end">{value}</text>'
+        )
 
     if len(slices) == 1:
         s = slices[0]
@@ -136,19 +131,14 @@ def render(card: dict) -> str:
             parts.append(
                 f'<path d="{slice_path(angle, a1)}" fill="{s["color"]}" stroke="{bg}" stroke-width="2.5" stroke-linejoin="round"/>'
             )
-            if s["share"] >= MIN_LABEL_SHARE:
-                lx, ly = point((R_OUT + R_IN) / 2, (angle + a1) / 2)
-                parts.append(
-                    f'<text x="{lx:.1f}" y="{ly:.1f}" font-size="11" font-weight="700" fill="{label_color(s["color"])}" text-anchor="middle" dominant-baseline="central">{pct(s["share"])}</text>'
-                )
             angle = a1
 
-    top = max(slices, key=lambda s: s["share"])
+    top = max(range(len(slices)), key=lambda i: slices[i]["share"])
     parts.append(
-        f'<text x="{CX}" y="{CY - 2}" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">{pct(top["share"])}</text>'
+        f'<text x="{CX}" y="{CY - 2}" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">{percents[top]}</text>'
     )
     parts.append(
-        f'<text x="{CX}" y="{CY + 13}" font-size="9.5" fill="{card["text"]}" text-anchor="middle">{top["name"]}</text>'
+        f'<text x="{CX}" y="{CY + 13}" font-size="9.5" fill="{card["text"]}" text-anchor="middle">{slices[top]["name"]}</text>'
     )
     parts.append("</svg>")
     return "\n".join(parts) + "\n"

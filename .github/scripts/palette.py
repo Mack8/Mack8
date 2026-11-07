@@ -40,3 +40,12 @@ def lighten(hex_color: str, amount: float) -> str:
     r, g, b = (int(h[i : i + 2], 16) for i in (0, 2, 4))
     mix = lambda c: round(c + (255 - c) * amount)
     return f"#{mix(r):02x}{mix(g):02x}{mix(b):02x}"
+
+
+def whole_percents(shares: list[float]) -> list[str]:
+    """Whole-number percentages, rounded half up, as display strings.
+
+    Equal shares always show the same value, so the total can be 99 or 101.
+    Anything under 1% is shown as "<1%".
+    """
+    return ["<1%" if x * 100 < 1 else f"{int(x * 100 + 0.5)}%" for x in shares]
