@@ -7,7 +7,7 @@
     <img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
   <br/><br/>
-  <img alt="Open to remote roles" src="https://img.shields.io/badge/Open%20to-remote%20roles-2ea44f?style=for-the-badge"/>
+  <img alt="Open to work: remote, hybrid or on-site" src="https://img.shields.io/badge/Open%20to%20work-Remote%20%C2%B7%20Hybrid%20%C2%B7%20On--site-2ea44f?style=for-the-badge"/>
 </div>
 
 ---
@@ -19,6 +19,7 @@ I am a passionate Full Stack Developer focused on building robust, scalable web 
 *   🌱 Currently deep diving into **Monorepo architectures**, database optimization, and scalable APIs.
 *   💻 **Development Environment:** Powered by **Linux (WSL2)** & **VS Code**.
 *   🐳 Enthusiastic about local AI workflows, self-hosting tools, and **Docker** environments.
+*   🗣️ **Languages:** Spanish · English · Portuguese (conversational).
 
 
 ---
@@ -47,7 +48,7 @@ I am a passionate Full Stack Developer focused on building robust, scalable web 
   <tr>
     <td colspan="3" align="center">
       <img src="https://raw.githubusercontent.com/Mack8/Mack8/output/profile-heat.svg" alt="3D contribution chart for the last year" width="100%" />
-      <br/><sub>Contributions over the last year: taller and warmer bars mean more activity that day.</sub>
+      <br/><sub>Bars: contributions per day over the last year (taller and warmer means more). Ring: languages by commits.</sub>
     </td>
   </tr>
 </table>

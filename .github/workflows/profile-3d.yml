@@ -23,6 +23,9 @@ jobs:
           USERNAME: ${{ github.repository_owner }}
           SETTING_JSON: .github/profile-3d-settings.json
 
+      - name: Label and recolor the language ring
+        run: python3 .github/scripts/restyle_3d_ring.py profile-3d-contrib/profile-heat.svg
+
       - name: Publish to the output branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

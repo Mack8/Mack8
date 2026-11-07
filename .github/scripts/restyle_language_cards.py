@@ -16,6 +16,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+from palette import color_for, label_color  # noqa: E402
+
 CARDS = ("1-repos-per-language.svg", "2-most-commit-language.svg")
 MARKER = "<!-- restyled -->"
 CX, CY, R_OUT, R_IN = 252, 118, 64, 40
@@ -68,11 +71,12 @@ def parse(svg: str) -> dict:
     names = {i: re.sub(r"<[^>]+>", "", re.sub(r"<tspan[^>]*>[^<]*</tspan>", "", t)).strip() for i, _, t in texts}
     text_color = texts[0][1]
     slices = []
+    used: dict = {}
     for idx, d, fill in arcs:
         if rects.get(idx, "").lower() != fill.lower():
             raise ValueError(f"legend color does not match arc color for slice {idx}")
         share = arc_share(d) if len(arcs) > 1 else 1.0
-        slices.append({"name": names[idx], "color": fill, "share": share})
+        slices.append({"name": names[idx], "color": color_for(names[idx], used), "share": share})
     total = sum(s["share"] for s in slices)
     if not 0.98 <= total <= 1.02:
         raise ValueError(f"slice shares add up to {total:.3f}, expected 1")
@@ -144,7 +148,7 @@ def render(card: dict) -> str:
             if s["share"] >= MIN_LABEL_SHARE:
                 lx, ly = point((R_OUT + R_IN) / 2, (angle + a1) / 2)
                 parts.append(
-                    f'<text x="{lx:.1f}" y="{ly:.1f}" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="central">{pct(s["share"])}</text>'
+                    f'<text x="{lx:.1f}" y="{ly:.1f}" font-size="11" font-weight="700" fill="{label_color(s["color"])}" text-anchor="middle" dominant-baseline="central">{pct(s["share"])}</text>'
                 )
             angle = a1
 
