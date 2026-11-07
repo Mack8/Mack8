@@ -19,7 +19,7 @@ I am a passionate Full Stack Developer focused on building robust, scalable web 
 *   🌱 Currently deep diving into **Monorepo architectures**, database optimization, and scalable APIs.
 *   💻 **Development Environment:** Powered by **Linux (WSL2)** & **VS Code**.
 *   🐳 Enthusiastic about local AI workflows, self-hosting tools, and **Docker** environments.
-*   🗣️ **Languages:** Spanish · English · Portuguese (conversational).
+*   🗣️ **Languages:** Spanish · English (B2) · Portuguese (conversational).
 
 
 ---
