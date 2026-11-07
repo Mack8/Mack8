@@ -34,6 +34,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 .github/scripts/recent_activity_card.py profile-summary-card-output/radical/5-recently-active.svg
 
+      - name: Draw the contribution heatmap
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 .github/scripts/contribution_heatmap.py profile-summary-card-output/radical/6-contributions.svg
+
       - name: Commit the cards
         run: |
           git config user.name "github-actions[bot]"
