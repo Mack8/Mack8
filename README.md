@@ -38,15 +38,19 @@ I am a passionate Full Stack Developer focused on building robust, scalable web 
 
 ### 📊 GitHub Activity
 
-<div align="center">
-  <img src="profile-summary-card-output/radical/1-repos-per-language.svg" alt="Top languages by repository" width="32%" />
-  <img src="profile-summary-card-output/radical/2-most-commit-language.svg" alt="Top languages by commit" width="32%" />
-  <img src="profile-summary-card-output/radical/3-stats.svg" alt="GitHub stats" width="32%" />
-</div>
-
-<div align="center">
-  <img alt="3D contribution chart" src="https://raw.githubusercontent.com/Mack8/Mack8/output/profile-night-view.svg" width="100%" />
-</div>
+<table width="100%">
+  <tr>
+    <td width="33%" align="center"><img src="profile-summary-card-output/radical/1-repos-per-language.svg" alt="Top languages by repository" width="100%" /></td>
+    <td width="33%" align="center"><img src="profile-summary-card-output/radical/2-most-commit-language.svg" alt="Top languages by commit" width="100%" /></td>
+    <td width="33%" align="center"><img src="profile-summary-card-output/radical/3-stats.svg" alt="GitHub stats" width="100%" /></td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center">
+      <img src="https://raw.githubusercontent.com/Mack8/Mack8/output/profile-heat.svg" alt="3D contribution chart for the last year" width="100%" />
+      <br/><sub>Contributions over the last year: taller and warmer bars mean more activity that day.</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
