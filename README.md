@@ -22,6 +22,7 @@ problem: this profile has .NET, TypeScript and Python projects.
 *   🏗️ **Architecture:** CQRS, event-driven services, REST and GraphQL, SQL and NoSQL. See [TaskFlow](https://github.com/Mack8/taskflow-mvp).
 *   🧪 **Quality:** automated tests as a habit, 400+ in [Finanzas App](https://github.com/Mack8/finanzas-app).
 *   🤖 **Local AI:** speech-to-text with Whisper and document search with citations, all running on my own machine. See [Transcriptor](https://github.com/Mack8/transcriptor-audio) and the [RAG lab](https://github.com/Mack8/documentos-rag-lab).
+*   🧰 **AI-assisted development:** I work daily with AI coding agents. I run several models through a shared workflow with planning, automated validation and review, and I test the results before shipping them.
 *   🐳 Docker, self-hosting and infrastructure as code with Bicep.
 *   🌱 **Currently learning:** Python for data analysis and machine learning, RAG and embeddings, AI agents with OpenClaw, and workflow automation with n8n.
 *   🗣️ **Languages:** Spanish · English (B2) · Portuguese (B2).
