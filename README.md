@@ -66,6 +66,7 @@ I like to learn by building complete things, in different stacks. Here is a samp
 | Project | What it is | Stack |
 | :--- | :--- | :--- |
 | 🧩 **[TaskFlow](https://github.com/Mack8/taskflow-mvp)** | A minimal Jira-style platform with CQRS, event-driven microservices, REST + GraphQL, SQL + NoSQL and Azure infrastructure as code. | .NET 8 · React · GraphQL · Cosmos DB (Mongo API) · Service Bus · Bicep |
+| 🏢 **[Inventra](https://inventra-7uxe.vercel.app/)** | Asset and service-desk platform for multi-branch organizations: fixed assets, tickets with queues and SLAs, supplies, suppliers and accounting (monthly depreciation, cost centers). *Private code: the login page is public, and a live demo is available on request via LinkedIn.* | Next.js · Express · Prisma · PostgreSQL · Docker |
 | 💰 **[Finanzas App](https://github.com/Mack8/finanzas-app)** | Personal finance tracker with per-user row-level security, recurring payments and a local worker that parses bank purchase alerts. 400+ automated tests. | Next.js 16 · React 19 · TypeScript · Supabase · Vitest |
 | 🎫 **[SupportFlow](https://github.com/Mack8/supportflow)** | Role-based support ticketing system built as a monorepo. | NestJS · Next.js · Prisma · PostgreSQL · Docker |
 | 🎙️ **[Transcriptor](https://github.com/Mack8/transcriptor-audio)** | 100% local speech-to-text with GPU acceleration, web UI, CLI and optional summaries from a local LLM. | Python · faster-whisper · CUDA · Gradio · Ollama |
