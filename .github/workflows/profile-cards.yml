@@ -2,7 +2,7 @@ name: Generate profile summary cards
 
 on:
   schedule:
-    - cron: "0 7 * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -28,6 +28,11 @@ jobs:
 
       - name: Redraw the language cards with the share inside the ring
         run: python3 .github/scripts/restyle_language_cards.py profile-summary-card-output/radical
+
+      - name: Draw the recently active card
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 .github/scripts/recent_activity_card.py profile-summary-card-output/radical/5-recently-active.svg
 
       - name: Commit the cards
         run: |

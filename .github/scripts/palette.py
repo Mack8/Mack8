@@ -30,3 +30,13 @@ def label_color(fill: str) -> str:
     r, g, b = (int(h[i : i + 2], 16) / 255 for i in (0, 2, 4))
     luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b
     return "#0d1117" if luminance > 0.55 else "#ffffff"
+
+
+def lighten(hex_color: str, amount: float) -> str:
+    """Blend a color with white by the given amount (0 to 1)."""
+    h = hex_color.lstrip("#")
+    if len(h) == 3:
+        h = "".join(c * 2 for c in h)
+    r, g, b = (int(h[i : i + 2], 16) for i in (0, 2, 4))
+    mix = lambda c: round(c + (255 - c) * amount)
+    return f"#{mix(r):02x}{mix(g):02x}{mix(b):02x}"

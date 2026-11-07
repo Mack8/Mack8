@@ -17,9 +17,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from palette import color_for, label_color  # noqa: E402
+from palette import color_for, label_color, lighten  # noqa: E402
 
-CARDS = ("1-repos-per-language.svg", "2-most-commit-language.svg")
+CARDS = ("1-repos-per-language.svg",)
 MARKER = "<!-- restyled -->"
 CX, CY, R_OUT, R_IN = 252, 118, 64, 40
 MIN_LABEL_SHARE = 0.07
@@ -36,15 +36,6 @@ def arc_share(d: str) -> float:
     start = math.atan2(x0, -y0) % math.tau
     end = math.atan2(x1, -y1) % math.tau
     return ((end - start) % math.tau) / math.tau
-
-
-def lighten(hex_color: str, amount: float) -> str:
-    h = hex_color.lstrip("#")
-    if len(h) == 3:
-        h = "".join(c * 2 for c in h)
-    r, g, b = (int(h[i : i + 2], 16) for i in (0, 2, 4))
-    mix = lambda c: round(c + (255 - c) * amount)
-    return f"#{mix(r):02x}{mix(g):02x}{mix(b):02x}"
 
 
 def parse(svg: str) -> dict:
