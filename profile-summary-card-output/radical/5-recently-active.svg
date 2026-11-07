@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="200" viewBox="0 0 340 200" role="img" aria-label="Recently active repositories">
+<style>text{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Sans-Serif}</style>
+<rect x="1" y="1" width="338" height="198" rx="8" fill="#141321" stroke="#302f3c" stroke-width="1"/>
+<text x="24" y="38" font-size="20" fill="#fe428e">Recently Active</text>
+<rect x="24" y="48" width="30" height="3" rx="1.5" fill="#fe428e"/>
+<circle cx="31" cy="78" r="5.5" fill="#3b82f6"/>
+<text x="44" y="82" font-size="14" fill="#a9fef7">supportflow</text>
+<text x="316" y="82" font-size="12" fill="#fe428e" text-anchor="end">Nov 7</text>
+<line x1="24" y1="94" x2="316" y2="94" stroke="#242431" stroke-width="1"/>
+<circle cx="31" cy="109" r="5.5" fill="#22c55e"/>
+<text x="44" y="113" font-size="14" fill="#a9fef7">taskflow-mvp</text>
+<text x="316" y="113" font-size="12" fill="#fe428e" text-anchor="end">Nov 7</text>
+<line x1="24" y1="125" x2="316" y2="125" stroke="#242431" stroke-width="1"/>
+<circle cx="31" cy="140" r="5.5" fill="#facc15"/>
+<text x="44" y="144" font-size="14" fill="#a9fef7">documentos-rag-lab</text>
+<text x="316" y="144" font-size="12" fill="#fe428e" text-anchor="end">Nov 7</text>
+<line x1="24" y1="156" x2="316" y2="156" stroke="#242431" stroke-width="1"/>
+<circle cx="31" cy="171" r="5.5" fill="#facc15"/>
+<text x="44" y="175" font-size="14" fill="#a9fef7">md2pdf</text>
+<text x="316" y="175" font-size="12" fill="#fe428e" text-anchor="end">Nov 7</text>
+</svg>
