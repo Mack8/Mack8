@@ -47,7 +47,7 @@ I am a passionate Full Stack Developer focused on building robust, scalable web 
   </tr>
   <tr>
     <td colspan="3" align="center">
-      <img src="https://raw.githubusercontent.com/Mack8/Mack8/output/profile-heat.svg" alt="3D contribution chart for the last year" width="100%" />
+      <img src="profile-summary-card-output/radical/6-contributions.svg" alt="Contribution heatmap for the last year" width="100%" />
     </td>
   </tr>
 </table>
