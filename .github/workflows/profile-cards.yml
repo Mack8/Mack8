@@ -26,8 +26,8 @@ jobs:
           THEME: radical
           AUTO_PUSH: false
 
-      - name: Add percentages to the language cards
-        run: python3 .github/scripts/add_percentages.py profile-summary-card-output/radical
+      - name: Redraw the language cards with the share inside the ring
+        run: python3 .github/scripts/restyle_language_cards.py profile-summary-card-output/radical
 
       - name: Commit the cards
         run: |
