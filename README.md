@@ -14,13 +14,17 @@
 
 ### 👤 About Me
 
-I am a passionate Full Stack Developer focused on building robust, scalable web applications and clean code architectures. I specialize in the JavaScript/TypeScript ecosystem, managing everything from dynamic, responsive frontends to microservices, database design, and containerized backend environments.
+Full Stack Developer from Costa Rica with a background in enterprise IT. I build
+complete products end to end, from the API and the database to the cloud
+infrastructure and the tests, and I like picking up a new stack to fit the
+problem: this profile has .NET, TypeScript and Python projects.
 
-*   🌱 Currently deep diving into **Monorepo architectures**, database optimization, and scalable APIs.
-*   💻 **Development Environment:** Powered by **Linux (WSL2)** & **VS Code**.
-*   🐳 Enthusiastic about local AI workflows, self-hosting tools, and **Docker** environments.
+*   🏗️ **Architecture:** CQRS, event-driven services, REST and GraphQL, SQL and NoSQL. See [TaskFlow](https://github.com/Mack8/taskflow-mvp).
+*   🧪 **Quality:** automated tests as a habit, 400+ in [Finanzas App](https://github.com/Mack8/finanzas-app).
+*   🤖 **Local AI:** speech-to-text with Whisper and document search with citations, all running on my own machine. See [Transcriptor](https://github.com/Mack8/transcriptor-audio) and the [RAG lab](https://github.com/Mack8/documentos-rag-lab).
+*   🐳 Docker, self-hosting and infrastructure as code with Bicep.
+*   🌱 **Currently learning:** Python for data analysis and machine learning, RAG and embeddings, AI agents with OpenClaw, and workflow automation with n8n.
 *   🗣️ **Languages:** Spanish · English (B2) · Portuguese (B2).
-
 
 ---
 
